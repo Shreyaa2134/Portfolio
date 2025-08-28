@@ -16,20 +16,12 @@ const About = () => {
           {/* Main Content */}
           <div className="glass-card rounded-2xl p-8 md:p-12 hover-glow">
             {/* Bio */}
-            <div className="mb-12">
-              <p className="text-lg text-foreground/90 leading-relaxed mb-6">
-                I'm a passionate <span className="text-primary font-semibold">Full Stack Developer</span> currently 
-                pursuing a B.Tech in Computer Science and Information Technology at IPS Academy, Indore. 
-                My journey in web development is driven by a deep fascination with creating 
-                <span className="text-secondary font-semibold"> visually appealing</span> and 
-                <span className="text-accent font-semibold"> responsive web designs</span> that deliver 
-                seamless user experiences.
-              </p>
+            <div className="mb-10">
               <p className="text-lg text-foreground/90 leading-relaxed">
-                I specialize in building modern web applications using the MERN stack, with a particular 
-                focus on integrating AI-powered features to create intelligent solutions. My approach 
-                combines technical proficiency with creative problem-solving to deliver applications 
-                that are not just functional, but truly delightful to use.
+                Passionate <span className="text-primary font-semibold">Full Stack Developer</span> pursuing B.Tech at IPS Academy, Indore (2026). 
+                I craft <span className="text-secondary font-semibold">modern web solutions</span> with the MERN stack, 
+                integrating <span className="text-accent font-semibold">AI-powered features</span> to create intelligent, 
+                user-centric applications that deliver exceptional experiences.
               </p>
             </div>
 
