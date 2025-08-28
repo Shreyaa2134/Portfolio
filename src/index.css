@@ -147,3 +147,23 @@ All colors MUST be HSL.
     animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
   }
 }
+
+@layer utilities {
+  /* Enhanced glass morphism */
+  .glass-card {
+    @apply bg-card/10 backdrop-blur-md border border-primary/10;
+  }
+  
+  /* Gradient text animation */
+  .gradient-text-animated {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient-shift bg-[length:200%_auto];
+  }
+  
+  /* Grid pattern background */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(var(--primary) / 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--primary) / 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
