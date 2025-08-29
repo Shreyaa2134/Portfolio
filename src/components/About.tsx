@@ -18,10 +18,16 @@ const About = () => {
             {/* Bio */}
             <div className="mb-10">
               <p className="text-lg text-foreground/90 leading-relaxed">
-                Passionate <span className="text-primary font-semibold">Full Stack Developer</span> pursuing B.Tech at IPS Academy, Indore (2026). 
-                I craft <span className="text-secondary font-semibold">modern web solutions</span> with the MERN stack, 
-                integrating <span className="text-accent font-semibold">AI-powered features</span> to create intelligent, 
-                user-centric applications that deliver exceptional experiences.
+                I am a dedicated <span className="text-primary font-semibold">Full Stack Developer</span> currently pursuing my B.Tech in Computer Science and Information Technology 
+                at IPS Academy, Indore, with an expected graduation in 2026. My expertise lies in crafting 
+                <span className="text-secondary font-semibold"> sophisticated web applications</span> using the MERN stack (MongoDB, Express.js, React, and Node.js), 
+                where I combine technical excellence with creative innovation to build solutions that are both powerful and intuitive.
+              </p>
+              <p className="text-lg text-foreground/90 leading-relaxed mt-4">
+                I specialize in developing <span className="text-accent font-semibold">scalable architectures</span> and implementing 
+                cutting-edge technologies like real-time data synchronization, progressive web applications, and cloud integrations. 
+                My approach emphasizes clean code principles, performance optimization, and creating seamless user experiences 
+                that transform complex business requirements into elegant digital solutions.
               </p>
             </div>
 
