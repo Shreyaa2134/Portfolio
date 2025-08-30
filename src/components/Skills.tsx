@@ -1,65 +1,36 @@
-import { Code2, Database, Globe, GitBranch, Wrench, Users } from 'lucide-react';
-import { Progress } from '@/components/ui/progress';
+import { Code2, Database, Globe, Wrench, Users } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Languages",
       icon: <Code2 className="text-primary" size={24} />,
-      skills: [
-        { name: "JavaScript/TypeScript", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "C/C++", level: 80 },
-      ]
+      skills: ["JavaScript/TypeScript", "Python", "C/C++"]
     },
     {
       title: "Frontend",
       icon: <Globe className="text-secondary" size={24} />,
-      skills: [
-        { name: "React.js", level: 92 },
-        { name: "Tailwind CSS", level: 88 },
-        { name: "HTML5/CSS3", level: 95 },
-        { name: "Bootstrap", level: 85 },
-      ]
+      skills: ["React.js", "Tailwind CSS", "HTML5/CSS3", "Bootstrap"]
     },
     {
       title: "Backend",
       icon: <Database className="text-accent" size={24} />,
-      skills: [
-        { name: "Node.js", level: 88 },
-        { name: "Express.js", level: 85 },
-        { name: "Django", level: 75 },
-        { name: "REST APIs", level: 90 },
-      ]
+      skills: ["Node.js", "Express.js", "Django", "REST APIs"]
     },
     {
       title: "Databases",
       icon: <Database className="text-primary" size={24} />,
-      skills: [
-        { name: "MongoDB", level: 85 },
-        { name: "MySQL", level: 82 },
-        { name: "NoSQL", level: 80 },
-      ]
+      skills: ["MongoDB", "MySQL", "NoSQL"]
     },
     {
       title: "Dev Tools",
       icon: <Wrench className="text-secondary" size={24} />,
-      skills: [
-        { name: "Git/GitHub", level: 90 },
-        { name: "Vercel", level: 85 },
-        { name: "Linux", level: 75 },
-        { name: "Postman", level: 88 },
-      ]
+      skills: ["Git/GitHub", "Vercel", "Linux", "Postman"]
     },
     {
       title: "Professional",
       icon: <Users className="text-accent" size={24} />,
-      skills: [
-        { name: "Project Management", level: 85 },
-        { name: "Team Collaboration", level: 90 },
-        { name: "Code Review", level: 88 },
-        { name: "Performance Optimization", level: 82 },
-      ]
+      skills: ["Project Management", "Team Collaboration", "Code Review", "Performance Optimization"]
     }
   ];
 
@@ -87,21 +58,14 @@ const Skills = () => {
                 <h3 className="text-xl font-bold">{category.title}</h3>
               </div>
               
-              <div className="space-y-4">
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm text-foreground/80">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="relative">
-                      <Progress value={skill.level} className="h-2" />
-                      <div 
-                        className="absolute inset-0 h-2 bg-gradient-primary rounded-full opacity-50 blur-sm"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
+                  <span 
+                    key={skill}
+                    className="px-3 py-1.5 bg-card/50 rounded-lg text-sm text-foreground/90 border border-border/50 hover:border-primary/50 transition-colors"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
