@@ -165,11 +165,21 @@ const Portfolio = () => {
 
                 {/* Links */}
                 <div className="flex gap-4">
-                  <Button variant="outline" size="sm" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => window.open(project.github, '_blank')}
+                  >
                     <Github size={16} className="mr-2" />
                     Code
                   </Button>
-                  <Button variant="gradient" size="sm" className="flex-1">
+                  <Button 
+                    variant="gradient" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => window.open(project.live, '_blank')}
+                  >
                     <ExternalLink size={16} className="mr-2" />
                     Live Demo
                   </Button>

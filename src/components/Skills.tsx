@@ -5,32 +5,38 @@ const Skills = () => {
     {
       title: "Languages",
       icon: <Code2 className="text-primary" size={24} />,
-      skills: ["JavaScript/TypeScript", "Python", "C/C++"]
+      skills: ["JavaScript/TypeScript", "Python", "C/C++"],
+      gradient: "from-primary/20 to-secondary/20"
     },
     {
       title: "Frontend",
       icon: <Globe className="text-secondary" size={24} />,
-      skills: ["React.js", "Tailwind CSS", "HTML5/CSS3", "Bootstrap"]
+      skills: ["React.js", "Tailwind CSS", "HTML5/CSS3", "Bootstrap"],
+      gradient: "from-secondary/20 to-accent/20"
     },
     {
       title: "Backend",
       icon: <Database className="text-accent" size={24} />,
-      skills: ["Node.js", "Express.js", "Django", "REST APIs"]
+      skills: ["Node.js", "Express.js", "Django", "REST APIs"],
+      gradient: "from-accent/20 to-primary/20"
     },
     {
       title: "Databases",
       icon: <Database className="text-primary" size={24} />,
-      skills: ["MongoDB", "MySQL", "NoSQL"]
+      skills: ["MongoDB", "MySQL", "NoSQL"],
+      gradient: "from-primary/20 to-accent/20"
     },
     {
       title: "Dev Tools",
       icon: <Wrench className="text-secondary" size={24} />,
-      skills: ["Git/GitHub", "Vercel", "Linux", "Postman"]
+      skills: ["Git/GitHub", "Vercel", "Linux", "Postman"],
+      gradient: "from-secondary/20 to-primary/20"
     },
     {
       title: "Professional",
       icon: <Users className="text-accent" size={24} />,
-      skills: ["Project Management", "Team Collaboration", "Code Review", "Performance Optimization"]
+      skills: ["Project Management", "Team Collaboration", "Code Review", "Performance Optimization"],
+      gradient: "from-accent/20 to-secondary/20"
     }
   ];
 
@@ -50,23 +56,30 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
-              className="glass-card rounded-2xl p-6 hover-glow animate-fade-in-up"
+              className="group glass-card rounded-2xl p-6 hover-glow animate-fade-in-up relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                {category.icon}
-                <h3 className="text-xl font-bold">{category.title}</h3>
-              </div>
+              {/* Gradient Background */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
               
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span 
-                    key={skill}
-                    className="px-3 py-1.5 bg-card/50 rounded-lg text-sm text-foreground/90 border border-border/50 hover:border-primary/50 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2 bg-card rounded-lg group-hover:scale-110 transition-transform duration-300">
+                    {category.icon}
+                  </div>
+                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{category.title}</h3>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span 
+                      key={skill}
+                      className="px-3 py-1.5 bg-card/50 rounded-lg text-sm text-foreground/90 border border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:bg-primary/10"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
