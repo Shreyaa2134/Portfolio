@@ -44,9 +44,6 @@ const Navigation = () => {
                 {link.label}
               </a>
             ))}
-            <Button variant="gradient" size="sm">
-              Download CV
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,9 +68,6 @@ const Navigation = () => {
                 {link.label}
               </a>
             ))}
-            <Button variant="gradient" size="sm" className="w-full mt-4">
-              Download CV
-            </Button>
           </div>
         )}
       </div>

@@ -103,7 +103,12 @@ const Services = () => {
                 </ul>
 
                 {/* CTA */}
-                <Button variant="outline" size="sm" className="group-hover:border-primary">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="group-hover:border-primary"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
                   Learn More
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
                 </Button>
@@ -117,7 +122,11 @@ const Services = () => {
           <p className="text-muted-foreground mb-6">
             Have a project in mind? Let's work together to bring your vision to life.
           </p>
-          <Button variant="gradient" size="lg">
+          <Button 
+            variant="gradient" 
+            size="lg"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Get Started
           </Button>
         </div>

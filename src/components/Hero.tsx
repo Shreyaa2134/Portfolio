@@ -80,19 +80,6 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-5xl mx-auto">
-          {/* Floating badges */}
-          <div className="absolute -top-10 left-1/4 animate-float">
-            <div className="glass-card px-4 py-2 rounded-full flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-xs text-foreground/70">AI-Powered</span>
-            </div>
-          </div>
-          <div className="absolute -top-10 right-1/4 animate-float-delayed">
-            <div className="glass-card px-4 py-2 rounded-full flex items-center gap-2">
-              <Code2 className="w-4 h-4 text-secondary" />
-              <span className="text-xs text-foreground/70">Full Stack</span>
-            </div>
-          </div>
           
           {/* Profile Image with glass morphism */}
           <div className="mb-8 relative inline-block">
@@ -142,14 +129,28 @@ const Hero = () => {
 
           {/* Enhanced CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button variant="glow" size="lg" className="group relative overflow-hidden">
+            <Button 
+              variant="glow" 
+              size="lg" 
+              className="group relative overflow-hidden"
+              onClick={() => {
+                document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               <span className="relative z-10 flex items-center">
                 View My Work
                 <ChevronDown className="ml-2 group-hover:translate-y-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
-            <Button variant="glass" size="lg" className="backdrop-blur-sm">
+            <Button 
+              variant="glass" 
+              size="lg" 
+              className="backdrop-blur-sm"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Get in Touch
               <Mail className="ml-2 w-4 h-4" />
             </Button>
@@ -174,7 +175,9 @@ const Hero = () => {
               <Linkedin size={24} />
             </a>
             <a
-              href="mailto:shreyatiwari2134@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=shreyatiwari2134@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="glass-card p-3 rounded-xl text-foreground/60 hover:text-primary hover:shadow-glow-primary transition-all hover:-translate-y-1 duration-300"
             >
               <Mail size={24} />

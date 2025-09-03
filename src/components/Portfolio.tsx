@@ -19,8 +19,8 @@ const Portfolio = () => {
         "Smart deadline predictions",
         "Automated task assignment"
       ],
-      github: "#",
-      live: "#",
+      github: "https://github.com/Shreyaa2134/AssignMateAI",
+      live: "https://assignmateai.vercel.app",
       icon: <Brain className="text-primary" size={24} />
     },
     {
@@ -36,8 +36,8 @@ const Portfolio = () => {
         "Role-based access",
         "Performance tracking"
       ],
-      github: "#",
-      live: "#",
+      github: "https://github.com/Shreyaa2134/EMS",
+      live: "https://employee-management-demo.vercel.app",
       icon: <Users className="text-secondary" size={24} />
     },
     {
@@ -53,8 +53,8 @@ const Portfolio = () => {
         "SEO optimized",
         "Performance focused"
       ],
-      github: "#",
-      live: "#",
+      github: "https://github.com/Shreyaa2134/portfolio",
+      live: "https://shreyatiwari.vercel.app",
       icon: <Database className="text-accent" size={24} />
     },
     {
@@ -70,8 +70,8 @@ const Portfolio = () => {
         "Rate limiting",
         "Database optimization"
       ],
-      github: "#",
-      live: "#",
+      github: "https://github.com/Shreyaa2134/rest-api-projects",
+      live: "https://api-documentation.vercel.app",
       icon: <Shield className="text-primary" size={24} />
     }
   ];
@@ -165,11 +165,21 @@ const Portfolio = () => {
 
                 {/* Links */}
                 <div className="flex gap-4">
-                  <Button variant="outline" size="sm" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => window.open(project.github, '_blank')}
+                  >
                     <Github size={16} className="mr-2" />
                     Code
                   </Button>
-                  <Button variant="gradient" size="sm" className="flex-1">
+                  <Button 
+                    variant="gradient" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => window.open(project.live, '_blank')}
+                  >
                     <ExternalLink size={16} className="mr-2" />
                     Live Demo
                   </Button>

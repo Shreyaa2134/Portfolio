@@ -1,65 +1,42 @@
-import { Code2, Database, Globe, GitBranch, Wrench, Users } from 'lucide-react';
-import { Progress } from '@/components/ui/progress';
+import { Code2, Database, Globe, Wrench, Users } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Languages",
       icon: <Code2 className="text-primary" size={24} />,
-      skills: [
-        { name: "JavaScript/TypeScript", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "C/C++", level: 80 },
-      ]
+      skills: ["JavaScript/TypeScript", "Python", "C/C++"],
+      gradient: "from-primary/20 to-secondary/20"
     },
     {
       title: "Frontend",
       icon: <Globe className="text-secondary" size={24} />,
-      skills: [
-        { name: "React.js", level: 92 },
-        { name: "Tailwind CSS", level: 88 },
-        { name: "HTML5/CSS3", level: 95 },
-        { name: "Bootstrap", level: 85 },
-      ]
+      skills: ["React.js", "Tailwind CSS", "HTML5/CSS3", "Bootstrap"],
+      gradient: "from-secondary/20 to-accent/20"
     },
     {
       title: "Backend",
       icon: <Database className="text-accent" size={24} />,
-      skills: [
-        { name: "Node.js", level: 88 },
-        { name: "Express.js", level: 85 },
-        { name: "Django", level: 75 },
-        { name: "REST APIs", level: 90 },
-      ]
+      skills: ["Node.js", "Express.js", "Django", "REST APIs"],
+      gradient: "from-accent/20 to-primary/20"
     },
     {
       title: "Databases",
       icon: <Database className="text-primary" size={24} />,
-      skills: [
-        { name: "MongoDB", level: 85 },
-        { name: "MySQL", level: 82 },
-        { name: "NoSQL", level: 80 },
-      ]
+      skills: ["MongoDB", "MySQL", "NoSQL"],
+      gradient: "from-primary/20 to-accent/20"
     },
     {
       title: "Dev Tools",
       icon: <Wrench className="text-secondary" size={24} />,
-      skills: [
-        { name: "Git/GitHub", level: 90 },
-        { name: "Vercel", level: 85 },
-        { name: "Linux", level: 75 },
-        { name: "Postman", level: 88 },
-      ]
+      skills: ["Git/GitHub", "Vercel", "Linux", "Postman"],
+      gradient: "from-secondary/20 to-primary/20"
     },
     {
       title: "Professional",
       icon: <Users className="text-accent" size={24} />,
-      skills: [
-        { name: "Project Management", level: 85 },
-        { name: "Team Collaboration", level: 90 },
-        { name: "Code Review", level: 88 },
-        { name: "Performance Optimization", level: 82 },
-      ]
+      skills: ["Project Management", "Team Collaboration", "Code Review", "Performance Optimization"],
+      gradient: "from-accent/20 to-secondary/20"
     }
   ];
 
@@ -79,30 +56,45 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
-              className="glass-card rounded-2xl p-6 hover-glow animate-fade-in-up"
+              className="group glass-card rounded-2xl p-6 hover-glow animate-fade-in-up relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                {category.icon}
-                <h3 className="text-xl font-bold">{category.title}</h3>
-              </div>
+              {/* Gradient Background */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
               
-              <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm text-foreground/80">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="relative">
-                      <Progress value={skill.level} className="h-2" />
-                      <div 
-                        className="absolute inset-0 h-2 bg-gradient-primary rounded-full opacity-50 blur-sm"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2 bg-card rounded-lg group-hover:scale-110 transition-transform duration-300">
+                    {category.icon}
                   </div>
-                ))}
+                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{category.title}</h3>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => {
+                    const gradients = [
+                      "from-blue-500 to-purple-500",
+                      "from-green-500 to-teal-500",
+                      "from-orange-500 to-red-500",
+                      "from-pink-500 to-rose-500",
+                      "from-indigo-500 to-blue-500",
+                      "from-yellow-500 to-orange-500",
+                      "from-purple-500 to-pink-500",
+                      "from-cyan-500 to-blue-500"
+                    ];
+                    const gradient = gradients[skillIndex % gradients.length];
+                    
+                    return (
+                      <span 
+                        key={skill}
+                        className="relative px-3 py-1.5 rounded-lg text-sm font-medium text-white overflow-hidden group cursor-pointer transform transition-all duration-300 hover:scale-105"
+                      >
+                        <span className={`absolute inset-0 bg-gradient-to-r ${gradient} opacity-90 group-hover:opacity-100 transition-opacity`}></span>
+                        <span className="relative z-10">{skill}</span>
+                      </span>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           ))}

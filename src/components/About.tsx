@@ -1,4 +1,4 @@
-import { GraduationCap, Code, Sparkles } from 'lucide-react';
+import { GraduationCap, Code, Sparkles, Briefcase } from 'lucide-react';
 
 const About = () => {
   return (
@@ -43,6 +43,35 @@ const About = () => {
                 </h4>
                 <p className="text-foreground/80 mb-1">IPS Academy, Indore</p>
                 <p className="text-muted-foreground">Expected Graduation: 2026</p>
+              </div>
+            </div>
+
+            {/* Experience/Internship */}
+            <div className="mb-12">
+              <div className="flex items-center gap-3 mb-6">
+                <Briefcase className="text-secondary" size={28} />
+                <h3 className="text-2xl font-bold">Experience</h3>
+              </div>
+              <div className="bg-card/50 rounded-xl p-6 border border-border/50">
+                <h4 className="text-xl font-semibold text-secondary mb-2">
+                  Web Development Intern
+                </h4>
+                <p className="text-foreground/80 mb-1">Adlytica</p>
+                <p className="text-muted-foreground mb-3">2024</p>
+                <ul className="text-foreground/80 space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Developed and maintained responsive web applications using modern technologies</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Collaborated with cross-functional teams to deliver client projects</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Gained hands-on experience with full-stack development and best practices</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
