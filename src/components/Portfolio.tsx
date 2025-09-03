@@ -19,7 +19,7 @@ const Portfolio = () => {
         "Smart deadline predictions",
         "Automated task assignment"
       ],
-      github: "https://github.com/shreyatiwari/AssignMateAI",
+      github: "https://github.com/Shreyaa2134/AssignMateAI",
       live: "https://assignmateai.vercel.app",
       icon: <Brain className="text-primary" size={24} />
     },
@@ -36,7 +36,7 @@ const Portfolio = () => {
         "Role-based access",
         "Performance tracking"
       ],
-      github: "https://github.com/shreyatiwari/employee-management-system",
+      github: "https://github.com/Shreyaa2134/EMS",
       live: "https://employee-management-demo.vercel.app",
       icon: <Users className="text-secondary" size={24} />
     },
@@ -53,7 +53,7 @@ const Portfolio = () => {
         "SEO optimized",
         "Performance focused"
       ],
-      github: "https://github.com/shreyatiwari/portfolio",
+      github: "https://github.com/Shreyaa2134/portfolio",
       live: "https://shreyatiwari.vercel.app",
       icon: <Database className="text-accent" size={24} />
     },
@@ -70,7 +70,7 @@ const Portfolio = () => {
         "Rate limiting",
         "Database optimization"
       ],
-      github: "https://github.com/shreyatiwari/rest-api-projects",
+      github: "https://github.com/Shreyaa2134/rest-api-projects",
       live: "https://api-documentation.vercel.app",
       icon: <Shield className="text-primary" size={24} />
     }
